@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--Light-grayish-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Space Mono";
+    padding-top: 50px;
+}
+
+input {
+    padding: 5px 10px;
+    border: 0;
+    background-color: hsla(202, 50%, 97%, 1);
+    width: 100%;
+    text-align: right;
+    color: var(--Dark-grayish-cyan);
+    font-weight: 700;
+    font-size: 24px;
+    font-family: "Space Mono";
+    border-radius: 10px;
+    outline-color: var(--Strong-cyan);
+    cursor: pointer;
+}
+
+.card {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--White);
+    max-width: 100vw;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 30px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bill input {
+    background-image: url(./images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: left center ;
+    background-position-x: 10px;
+}
+
+input::placeholder {
+    text-align: right;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--Grayish-cyan);
+}
+
+
+.tip-buttons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px 10px;
+}
+
+button {
+    padding: 5px;
+    background-color: var(--Very-dark-cyan);
+    color: var(--White);
+    font-family: "Space Mono";
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+button.active {
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+button:hover {
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+}
+
+p {
+    font-weight: 700;
+    color: var(--Dark-grayish-cyan);
+    padding-bottom: 10px;
+}
+
+.people input {
+    background-image: url(./images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: left center ;
+    background-position-x: 10px;
+}
+
+.result-card {
+    background-color: var(--Very-dark-cyan);
+    padding: 20px 20px;
+    border-radius: 20px;
+}
+
+.tip-display,.total-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tip-display span,.total-display span{
+    color: var(--White);
+}
+
+.total-amount, .tip-amount {
+    color: var(--Strong-cyan);
+    font-size: 24px;
+}
+
+.reset{
+    width: 100%;
+    background-color: hsla(183, 79%, 24%, 1);
+    text-transform: uppercase;
+    color: hsla(184, 89%, 21%, 1);
+    cursor: pointer;
+}
+
+.reset.active{
+    color: var(--Very-dark-cyan);
+    background-color: var(--Strong-cyan);
+}
+
+@media (min-width:376px) {
+    .card {
+        margin-top: 40px;
+        flex-direction: row;
+        gap: 40px;
+        background-color: var(--White);
+        width: 70vw;
+        border-radius: 20px;
+        padding: 40px;
+    }
+
+    .right {
+        width: 50%;
+    }
+
+    .result-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .display {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap:30px
+    }
+
+    .tip-buttons {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        gap: 10px 10px;
+    }
+}
